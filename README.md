@@ -23,7 +23,7 @@ The game features tanks, mines, walls, and dynamic gameplay across multiple scre
 - Console-based UI running on Windows (80x25 screen size)
 
 ## Project Structure
-
+"
 TankBattle/
 ├── src/ # All C++ source files and class implementations
 ├── screens/ # Game maps in .screen format
@@ -31,6 +31,7 @@ TankBattle/
 ├── results/ # Expected output files for validation (used in -silent mode)
 ├── files_format.txt # Explanation of .steps and .result file formats
 ├── README.md # Project description and instructions
+"
 
 ## Files Format
 
