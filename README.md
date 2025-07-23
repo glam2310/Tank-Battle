@@ -37,6 +37,12 @@ TankBattle/
 
 A detailed explanation of the `.steps` and `.result` formats can be found in `files_format.txt`.
 
+## Screenshot
+
+Here is an example of the game running in the console:
+
+![Tank Battle Screenshot](screenshot.png)
+
 ## Author
 
 Stav Glam  
