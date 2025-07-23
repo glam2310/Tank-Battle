@@ -25,12 +25,12 @@ The game features tanks, mines, walls, and dynamic gameplay across multiple scre
 ## Project Structure
 ```
 TankBattle/
-├── src/ # All C++ source files and class implementations
-├── screens/ # Game maps in .screen format
-├── steps/ # Saved gameplay input (used in -load mode)
-├── results/ # Expected output files for validation (used in -silent mode)
-├── files_format.txt # Explanation of .steps and .result file formats
-├── README.md # Project description and instructions
+├── src/              # All C++ source files and class implementations
+├── screens/          # Game maps in .screen format
+├── steps/            # Saved gameplay input (used in -load mode)
+├── results/          # Expected output files for validation (used in -silent mode)
+├── files_format.txt  # Explanation of .steps and .result file formats
+├── README.md         # Project description and instructions
 ```
 
 ## Files Format
