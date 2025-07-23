@@ -1,0 +1,81 @@
+# files_format.txt
+
+This file describes the structure of the `.steps` and `.result` files used by the tank game.
+============================================================
+steps File Format
+============================================================
+
+- Each line (after the first) represents one game iteration.
+- The file starts with a seed line:
+  
+  SEED <integer_value>
+
+  This seed is used to generate cannon directions and must be identical in replay mode for consistency.
+
+- Each following line contains exactly 6 integers - as the 'keys' array size, separated by spaces.  
+  Each number represents the ASCII value of a key that was pressed by one of the players.
+
+- The value `48` (which is ASCII for '0') means - no key was pressed.
+
+Example:
+SEED 123456
+87 87 48 75 75 48
+48 48 65 48 68 74
+83 48 48 83 76 48
+
+Explanation of first gameplay line:
+- 87 = 'W' → P1 Left
+- 87 = 'W' → P1 Right
+- 48 = '0' → P1(nothing)
+- 75 = 'K' → P2 Left
+- 75 = 'K' → P2 Right
+- 48 = '0' → P2(nothing)
+
+============================================================
+result File Format
+============================================================
+
+This file logs events that occurred during the game, such as shell hits, mine deaths, and final score.
+
+There are two types of entries:
+
+1. **Event lines** per iteration  
+   Format: T <iteration_number> <event_type> <details>
+
+2. **Final score line**  
+Format: SCORE <score_player1> <score_player2>
+
+Allowed event types:
+- HIT SHELL x y — Two shells collided at (x, y)
+- HIT TANK x y — A tank was hit at (x, y)
+- HIT WALL x y — A wall was hit at (x, y)
+- HIT CANNON x y — A cannon was hit at (x, y)
+- MINE P1 — Player 1 died from a mine
+- MINE P2 — Player 2 died from a mine
+
+Final Score:
+- Indicates who won and their score.
+- The losing player’s score is 0.
+- The winner is determined by who has the higher score.
+
+============================================================
+Example of a full result file:
+============================================================
+T 8 HIT WALL 15 7
+T 12 HIT TANK 20 5
+T 12 HIT CANNON 21 5
+T 13 HIT SHELL 22 6
+T 21 MINE P2
+T 32 HIT TANK 31 8
+SCORE 9200 0
+
+Explanation:
+- Iteration 8: Wall was hit at (15,7)
+- Iteration 12: Tank and cannon were hit
+- Iteration 13: Shells collided
+- Iteration 21: Player 2 hit a mine
+- Iteration 32: Another tank hit
+- Player 1 won with 9200 points, Player 2 had 0
+
+
+
